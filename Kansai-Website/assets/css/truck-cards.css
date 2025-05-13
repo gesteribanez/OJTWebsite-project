@@ -1,0 +1,540 @@
+/* General Styles */
+
+/* Chat Widget Styles */
+.chat-widget {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 1000;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat-button {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background-color: #10a729;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease;
+}
+
+.chat-button:hover {
+background-color: #0d8922;
+transform: scale(1.05);
+}
+
+.chat-button i {
+font-size: 24px;
+}
+
+.chat-box {
+position: absolute;
+bottom: 80px;
+right: 0;
+width: 350px;
+height: 450px;
+background-color: white;
+border-radius: 15px;
+box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+display: none;
+flex-direction: column;
+overflow: hidden;
+transition: all 0.3s ease;
+opacity: 0;
+transform: translateY(20px);
+}
+
+.chat-box.active {
+display: flex;
+opacity: 1;
+transform: translateY(0);
+}
+
+.chat-header {
+background-color: #10a729;
+color: white;
+padding: 15px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.chat-title {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.chat-title img {
+width: 40px;
+height: 30px;
+border-radius: 50%;
+}
+
+.chat-title h5 {
+margin: 0;
+font-size: 16px;
+font-weight: 600;
+}
+
+.chat-close {
+background: none;
+border: none;
+color: white;
+cursor: pointer;
+font-size: 18px;
+}
+
+.chat-body {
+flex: 1;
+padding: 15px;
+overflow-y: auto;
+background-color: #f5f5f5;
+}
+
+.chat-message {
+margin-bottom: 15px;
+display: flex;
+flex-direction: column;
+}
+
+.user-message {
+align-items: flex-end;
+}
+
+.bot-message {
+align-items: flex-start;
+}
+
+.message-content {
+padding: 10px 15px;
+border-radius: 18px;
+max-width: 80%;
+word-wrap: break-word;
+}
+
+.user-message .message-content {
+background-color: #10a729;
+color: white;
+border-bottom-right-radius: 5px;
+}
+
+.bot-message .message-content {
+background-color: #e9e9eb;
+color: #333;
+border-bottom-left-radius: 5px;
+}
+
+.message-time {
+font-size: 11px;
+color: #888;
+margin-top: 5px;
+}
+
+.chat-footer {
+padding: 15px;
+border-top: 1px solid #eaeaea;
+display: flex;
+align-items: center;
+background-color: white;
+}
+
+.chat-input {
+flex: 1;
+border: 1px solid #ddd;
+border-radius: 20px;
+padding: 8px 15px;
+outline: none;
+font-size: 14px;
+}
+
+.chat-input:focus {
+border-color: #10a729;
+}
+
+.send-button {
+background-color: #10a729;
+color: white;
+border: none;
+border-radius: 50%;
+width: 35px;
+height: 35px;
+margin-left: 10px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s ease;
+}
+
+.send-button:hover {
+background-color: #0d8922;
+}
+
+.chat-bot-typing {
+display: flex;
+padding: 10px 15px;
+background-color: #e9e9eb;
+border-radius: 18px;
+max-width: 80%;
+border-bottom-left-radius: 5px;
+align-self: flex-start;
+}
+
+.typing-dots {
+display: flex;
+align-items: center;
+}
+
+.typing-dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: #888;
+margin: 0 2px;
+animation: typing-animation 1.5s infinite;
+}
+
+.typing-dot:nth-child(2) {
+animation-delay: 0.5s;
+}
+
+.typing-dot:nth-child(3) {
+animation-delay: 1s;
+}
+
+@keyframes typing-animation {
+0% { transform: translateY(0); }
+50% { transform: translateY(-5px); }
+100% { transform: translateY(0); }
+}
+
+/* Quick reply buttons */
+.quick-replies {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 10px;
+}
+
+.quick-reply-btn {
+background-color: #e9e9eb;
+border: none;
+border-radius: 15px;
+padding: 5px 10px;
+font-size: 12px;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.quick-reply-btn:hover {
+background-color: #d0d0d3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+.chat-box {
+    width: 300px;
+    height: 400px;
+    bottom: 70px;
+    right: 0;
+}
+}
+
+/* Truck List Styles */
+.truck-list-item {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .truck-list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .truck-list-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+  }
+  
+  /* Image Styles */
+  .truck-list-image {
+    position: relative;
+    height: 100%;
+    min-height: 250px;
+  }
+  
+  .truck-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Content Styles */
+  .truck-list-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .truck-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .truck-main-info {
+    flex: 1;
+  }
+  
+  .truck-brand {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+  }
+  
+  .truck-type {
+    color: #666;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .truck-price {
+    text-align: right;
+  }
+  
+  .price-amount {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #10a729;
+  }
+  
+  .truck-code {
+    display: inline-block;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #242323;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  
+  /* Details Section */
+  .truck-list-details {
+    display: flex;
+    gap: 24px;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .detail-item i {
+    font-size: 18px;
+    color: #181717;
+  }
+  
+  .detail-item span {
+    font-size: 14px;
+    color: #444;
+  }
+  
+  /* Action Buttons */
+  .truck-list-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+  }
+  
+  .btn-view-details, .btn-inquire {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-view-details {
+    background: #fff;
+    color: #10a729;
+    border: 2px solid #10a729;
+  }
+  
+  .btn-view-details:hover {
+    background: #10a729;
+    color: #fff;
+  }
+  
+  .btn-inquire {
+    background: #10a729;
+    color: #fff;
+  }
+  
+  .btn-inquire:hover {
+    background: #0d8921;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .truck-list-container {
+      grid-template-columns: 250px 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .truck-list-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .truck-list-image {
+      min-height: 200px;
+    }
+    
+    .truck-list-content {
+      padding: 16px;
+    }
+    
+    .truck-list-header {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .truck-price {
+      text-align: left;
+    }
+    
+    .truck-list-actions {
+      flex-direction: column;
+    }
+    
+    .btn-view-details, .btn-inquire {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .truck-list-details {
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .truck-brand {
+      font-size: 20px;
+    }
+    
+    .price-amount {
+      font-size: 20px;
+    }
+  }
+  /* Dark Mode Styles */
+[data-theme="dark"] .truck-list-item {
+    background: #1a1c1e;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  [data-theme="dark"] .truck-list-item:hover {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  [data-theme="dark"] .truck-brand {
+    color: #ffffff;
+  }
+  
+  [data-theme="dark"] .truck-type {
+    color: #a0a0a0;
+  }
+  
+  [data-theme="dark"] .price-amount {
+    color: #10a729;
+  }
+  
+  [data-theme="dark"] .truck-code {
+    background: #fff;
+    color: #2d3436;
+    font-weight: bold;
+  }
+  
+  [data-theme="dark"] .truck-list-details {
+    border-top: 1px solid #2d3436;
+    border-bottom: 1px solid #2d3436;
+  }
+  
+  [data-theme="dark"] .detail-item i {
+    color: #2d3436;
+  }
+  
+  [data-theme="dark"] .detail-item span {
+    color: #ffffff;
+  }
+  
+  [data-theme="dark"] .btn-view-details {
+    background: transparent;
+    color: #10a729;
+    border: 2px solid #10a729;
+  }
+  
+  [data-theme="dark"] .btn-view-details:hover {
+    background: #10a729;
+    color: #f5f5f5;
+  }
+  
+  [data-theme="dark"] .btn-inquire {
+    background: #198754;
+    color: #fff;
+  }
+  
+  [data-theme="dark"] .btn-inquire:hover {
+    background: #10a729;
+  }
+  
+  [data-theme="dark"] .status-badge {
+    background: #10a729;
+  }
+  
+  /* Dark Mode Media Queries */
+  @media (max-width: 768px) {
+    [data-theme="dark"] .truck-list-content {
+      background: #1a1c1e;
+    }
+    
+    [data-theme="dark"] .truck-price {
+      color: #10a729;
+    }
+  }
+  
+  /* Dark Mode Transitions */
+  .truck-list-item,
+  .truck-brand,
+  .truck-type,
+  .price-amount,
+  .truck-code,
+  .detail-item span,
+  .btn-view-details,
+  .btn-inquire {
+    transition: all 0.3s ease;
+  }
+  

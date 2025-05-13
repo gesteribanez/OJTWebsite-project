@@ -1,0 +1,357 @@
+css/* 
+ * Truck Details Modern CSS
+ * Clean, responsive styling for vehicle details page
+ */
+
+/* Base Styles */
+:root {
+  --primary-color: #10a729;
+  --primary-dark: #0a8021;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+.project-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.vehicle-details-modern {
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Gallery Section */
+.gallery-container-modern {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.main-image-container-modern {
+  position: relative;
+  height: 1000px;
+  object-fit: cover;
+  overflow: hidden;
+  background-color: var(--light-gray);
+}
+
+.slider-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.slider-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slider-wrapper img.active-slide {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+.slider-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slider-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider-pagination {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background-color: white;
+}
+
+.thumbnail-strip-modern {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scrollbar-width: thin;
+}
+
+.thumbnail-modern {
+  flex: 0 0 80px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.thumbnail-modern:hover {
+  opacity: 0.9;
+}
+
+.thumbnail-modern.active {
+  opacity: 1;
+  border-color: var(--primary-color);
+}
+
+.thumbnail-modern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-image-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+}
+
+/* Details Tabs */
+.details-tabs-modern {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.tab-nav-modern {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-nav-modern::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-link-modern {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  position: relative;
+}
+
+.tab-link-modern:hover {
+  color: var(--primary-color);
+}
+
+.tab-link-modern.active {
+  color: var(--primary-color);
+}
+
+.tab-link-modern.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.tab-pane-modern {
+  display: none;
+}
+
+.tab-pane-modern.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Specifications Grid */
+.specs-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.specs-card-modern {
+  background-color: var(--light-gray);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.specs-header-modern {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.specs-header-modern h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.specs-row-modern {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.specs-row-modern:last-child {
+  border-bottom: none;
+}
+
+.specs-label-modern {
+  color: #777;
+  font-size: 0.875rem;
+}
+
+.specs-value-modern {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-swatch-modern {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+}
+
+/* Details List */
+.details-list-modern {
+  margin: 0;
+  padding: 0;
+}
+
+.detail-item-modern {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.detail-icon-modern {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.no-details {
+  color: #777;
+  font-style: italic;
+}
+
+/* Contact Section */
+.contact-card-modern {
+  background-color: var(--light-gray);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-card-modern h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.contact-card-modern p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+
+
+.contact-button-modern:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .vehicle-header-modern {
+    padding: 1rem;
+  }
+  
+  .vehicle-title-modern {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .price-availability-modern {
+    align-items: flex-start;
+  }
+  
+  .main-image-container-modern {
+    height: 300px;
+  }
+  
+  .details-tabs-modern {
+    padding: 0 1rem 1rem;
+  }
+  
+  .specs-grid-modern {
+    grid-template-columns: 1fr;
+  }
+}
